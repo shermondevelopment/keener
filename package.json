@@ -1,0 +1,34 @@
+{
+  "name": "boilerplate-project-nodejs",
+  "version": "1.0.0",
+  "description": "boilerplate for jobs using nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --passWithNoTests",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "app/**/*.ts": [
+      "prettier --write .",
+      "npm run test"
+    ]
+  },
+  "author": "victorshermon",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/config-conventional": "^15.0.0",
+    "@types/jest": "^27.0.3",
+    "@typescript-eslint/eslint-plugin": "^5.4.0",
+    "@typescript-eslint/parser": "^5.4.0",
+    "commitlint": "^15.0.0",
+    "eslint": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.0",
+    "jest": "^27.3.1",
+    "lint-staged": "^12.0.3",
+    "prettier": "^2.4.1",
+    "ts-jest": "^27.0.7",
+    "typescript": "^4.5.2"
+  }
+}
