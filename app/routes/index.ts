@@ -1,6 +1,9 @@
 import { Router } from 'express'
-import { signin } from '../controllers/signin'
+import { home, signin } from '../controllers/signin'
 
 const router = Router()
 
-router.get('/signin', signin)
+router.post('/signin', signin)
+router.get('/', home)
+
+export default router

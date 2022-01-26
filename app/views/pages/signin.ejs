@@ -1,3 +1,18 @@
-<form>
-  <h1>Login</h1>
-</form>
+<%- include('../partials/head'); %>
+
+  <div class="signin">
+    <form method="post" action="/signin">
+      <div class="col-md-6 w-100">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" name="email" required placeholder="meuemail@example.com">
+      </div>
+      <div class="col-md-6 w-100">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" name="password" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Entrar</button>
+      <br />
+    </form>
+    <a href="/cadastro" class="btn btn-primary">Cadstre-se</a>
+  </div>
+  <%- include('../partials/footer'); %>
