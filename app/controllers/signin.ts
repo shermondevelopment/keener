@@ -1,4 +1,5 @@
 import { Response, Request } from 'express'
+import bcrypt from 'bcrypt'
 import { MysqlConnect } from '../helpers/database'
 import { User } from '../entity/User'
 
