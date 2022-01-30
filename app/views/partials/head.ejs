@@ -16,9 +16,14 @@
 
 <header class="bg-info p-4 d-flex justify-content-between">
   <h5 class="text-secondary">Sistema de Estoque</h5>
-  <%if (name !=='' ) { %>
-    <h6>Seja bem vindo <%= name %>!</h6>
-    <% } %>
+  <div class="d-flex align-items-center">
+    <% if(user?.name !==undefined ) { %>
+      <h6 class="mb-0" style="margin-right: 20px;">
+        Seja bem vindo <%= user?.name %>
+      </h6>
+      <a href="/logout" class="link-danger">Sair</a>
+      <% } %>
+  </div>
 </header>
 
 <body>
