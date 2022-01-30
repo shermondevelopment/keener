@@ -14,9 +14,11 @@
   <title>Keener Estoque</title>
 </head>
 
-<header class="bg-info p-4">
+<header class="bg-info p-4 d-flex justify-content-between">
   <h5 class="text-secondary">Sistema de Estoque</h5>
-
+  <%if (name !=='' ) { %>
+    <h6>Seja bem vindo <%= name %>!</h6>
+    <% } %>
 </header>
 
 <body>

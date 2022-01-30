@@ -14,5 +14,11 @@
       <br />
     </form>
     <a href="/cadastro" class="btn btn-primary">Cadstre-se</a>
+    <%if (error !=='' ) { %>
+      <div class="alert alert-danger w-100 mx-auto mt-2" role="alert">
+        <%= error %>
+      </div>
+      <% } %>
   </div>
+
   <%- include('../partials/footer'); %>
