@@ -1,19 +1,23 @@
 <%- include('../partials/head'); %>
 
   <div class="signin">
-    <form method="post" action="/signin">
+    <form method="post" action="/signup">
       <div class="col-md-6 w-100">
         <label class="form-label">Email</label>
         <input type="email" class="form-control" name="email" required placeholder="meuemail@example.com">
       </div>
       <div class="col-md-6 w-100">
-        <label class="form-label">Password</label>
+        <label class="form-label">Nome</label>
+        <input type="text" class="form-control" name="name" required>
+      </div>
+      <div class="col-md-6 w-100">
+        <label class="form-label">Senha</label>
         <input type="password" class="form-control" name="password" required>
       </div>
-      <button type="submit" class="btn btn-primary">Entrar</button>
+      <button type="submit" class="btn btn-primary">Cadastrar</button>
       <br />
     </form>
-    <a href="/signup" class="btn btn-primary">Cadastre-se</a>
+    <a href="/" class="btn btn-primary">Login</a>
     <%if (error !=='' ) { %>
       <div class="alert alert-danger w-100 mx-auto mt-2" role="alert">
         <%= error %>

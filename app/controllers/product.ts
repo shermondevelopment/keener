@@ -3,6 +3,10 @@ import { Produtos } from '../entity/Product'
 import { MysqlConnect } from '../helpers/database'
 
 export const addproduct = (req: Request, res: Response) => {
+  if (!req.session.user) {
+    res.redirect('/')
+  }
+  // req.session
   res.render('pages/addproduct')
 }
 
@@ -22,6 +26,9 @@ export const addpro = async (req: Request, res: Response) => {
 }
 
 export const editProduct = async (req: Request, res: Response) => {
+  if (!req.session.user) {
+    res.redirect('/')
+  }
   const produto = MysqlConnect.getRepository(Produtos)
   const findProduct = await produto.find({ id: req.params.id })
   res.render('pages/editproduct', { findProduct })

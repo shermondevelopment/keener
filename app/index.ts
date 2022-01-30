@@ -5,6 +5,7 @@ import session from 'express-session'
 import { MysqlConnect } from './helpers/database'
 import path from 'path'
 const app = express()
+
 app.use(
   session({
     secret: 'somesecret',
@@ -12,6 +13,7 @@ app.use(
     resave: true
   })
 )
+
 app.use(function (req, res, next) {
   res.locals.user = req.session.user
   next()
