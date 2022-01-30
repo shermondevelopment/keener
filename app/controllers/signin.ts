@@ -9,7 +9,7 @@ export const home = (req: Request, res: Response) => {
 
 export const signin = async (req: Request, res: Response) => {
   const user = MysqlConnect.getRepository(User)
-  const info = await user.find({ name: 'victor' })
+  const info = await user.find({ email: req.body.email })
   res.send(info)
 }
 
