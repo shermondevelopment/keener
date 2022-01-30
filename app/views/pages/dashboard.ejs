@@ -1,35 +1,46 @@
 <%- include('../partials/head'); %>
 
 
-  <div class="w-50 mx-auto mt-50" style="margin-top: 40px;">
+  <div class="mx-auto mt-50" style="margin-top: 40px; max-width: 60%;">
+    <a href="/addproduct">
+      <button type="button" class="btn btn-success mb-4">Adicionar produto</button>
+    </a>
     <table class="table table-bordered">
       <thead>
         <tr>
           <th scope="col">id</th>
           <th scope="col">cod</th>
-          <th scope="col">title</th>
-          <th scope="col">price</th>
+          <th scope="col">Nome</th>
+          <th scope="col">Preço Unit</th>
+          <th scope="col">Quantidade</th>
+          <th scope="col">Ações</th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-        </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th>3</th>
-          <td>Larry the Bird</td>
-          <td>@twitter</td>
-          <td>produto</td>
-        </tr>
+        <% for(var i=0; i<findProduct.length; i++) {%>
+          <tr>
+            <td scope="row">
+              <%= findProduct[i].id %>
+            </td>
+            <td>
+              <%= findProduct[i].code%>
+            </td>
+            <td>
+              <%= findProduct[i].name%>
+            </td>
+            <td>
+              R$ <%= findProduct[i].price%>
+            </td>
+            <td>
+              <%= findProduct[i].quantidade%>
+            </td>
+            <td>
+              <a href="/editproduct/<%= findProduct[i].id %>">
+                <button type="button" class="btn btn-primary">Editar</button>
+              </a>
+            </td>
+          </tr>
+          <% } %>
       </tbody>
     </table>
   </div>

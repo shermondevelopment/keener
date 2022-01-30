@@ -9,14 +9,13 @@ app.use(
   session({
     secret: 'somesecret',
     saveUninitialized: false,
-    resave: false
+    resave: true
   })
 )
 app.use(function (req, res, next) {
   res.locals.user = req.session.user
   next()
 })
-
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(router)

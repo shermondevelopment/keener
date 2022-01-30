@@ -1,0 +1,47 @@
+<%- include('../partials/head'); %>
+
+  <div class="container-sm mt-5">
+    <h2>Editar Produto</h2>
+    <a href="/dashboard">
+      <button type="button" class="btn btn-primary">Voltar</button>
+    </a>
+    <form method="POST" action="/editpro" class="mt-5">
+      <div class="row w-50">
+        <div class="col">
+          <input type="text" class="form-control" name="code" value="<%=findProduct[0].code %>" required
+            placeholder=" Ex: 34263428743" pattern="\d+">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" name="name" required placeholder="Nome do produto"
+            value="<%=findProduct[0].name %>">
+        </div>
+      </div>
+      <div class="col d-flex">
+        <div class="row w-20 mt-4">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text">$</span>
+            </div>
+            <input type="text" class="form-control" name="price" aria-label="Amount (to the nearest dollar)"
+              placeholder="Preço unitário" required pattern="\d+" value="<%=findProduct[0].price %>">
+            <div class="input-group-append">
+              <span class="input-group-text">.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row w-50">
+        <div class="col">
+          <input type="text" class="form-control" name="quantidade" required
+            placeholder="Quantidade do produto: Ex: 1, 2, 3, 4" pattern="\d+" value="<%=findProduct[0].quantidade %>">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" name="quantidademinima" required placeholder="Quantidade minima"
+            value="<%=findProduct[0].quantidademinima %>" pattern="\d+">
+        </div>
+        <input type="hidden" name="id" value="<%=findProduct[0].id %>" </div>
+      </div>
+      <button type="submit" class="btn btn-success mt-5">Salvar</button>
+    </form>
+  </div>
+  <%- include('../partials/footer'); %>
