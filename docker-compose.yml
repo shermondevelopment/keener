@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  mysql:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      MYSQL_ROOT_PASSWORD: ${TYPEORM_PASSWORD}
+    restart: always
+    volumes:
+      - ./data:/var/lib/mysql
+    ports:
+      - '3306:3306'
+    env_file:
+      - .env

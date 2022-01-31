@@ -11,14 +11,20 @@ This project uses lot of stuff as:
 
 ## Install dependencies
 
-``` bash
+```bash
 npm install
 # or
 yarn install
 ```
 
+## upload docker container with mysql database to run application
+
+docker-compose up --build
+
+## start application
+
+npm run start:dev
+
 ## Commands
 
 - `test`: runs your test
-
-
